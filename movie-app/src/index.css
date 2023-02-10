@@ -23,6 +23,7 @@ nav a {
   color: black;
 }
 
-nav a:hover {
-  color: blue;
-}
+/* nav a:active {
+  text-decoration: none;
+  font-weight: bold;
+} */
