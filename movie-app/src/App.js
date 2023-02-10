@@ -1,8 +1,17 @@
+import { Routes, Route } from "react-router-dom";
+import { Home } from "./views/Home";
+import { Reviews } from "./views/Reviews";
+import { Navbar } from "./components/Navbar";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Movie App</h1>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/reviews" element={<Reviews />} />
+      </Routes>
+    </>
   );
 }
 
