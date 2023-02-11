@@ -30,5 +30,21 @@
       "actors":"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
       "poster":"https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg",
       "rating":5
+    },
+    "movie5":{
+        "id":5,
+      "name":"Spiderman: No Way Home",
+      "releaseDate":"2021-12-17",
+      "actors":"Tom Holland, Zendaya, Benedict Cumberbatch, Jacob Batalon",
+      "poster":"https://upload.wikimedia.org/wikipedia/en/0/00/Spider-Man_No_Way_Home_poster.jpg",
+      "rating":4
+    },
+    "movie6":{
+        "id":6,
+      "name":"Avengers: Endgame",
+      "releaseDate":"2019-04-26",
+      "actors":"Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth",
+      "poster":"https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
+      "rating":4
     }
   }

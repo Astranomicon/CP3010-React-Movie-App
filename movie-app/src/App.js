@@ -11,7 +11,9 @@ function App() {
 		<>
 			<Navbar />
 			<Routes>
+        {/* Route user to Home Page */}
 				<Route path='/' element={<Home />} />
+        {/* Route user to Review Page */}
 				<Route path='/reviews' element={<Reviews />} />
 			</Routes>
 		</>

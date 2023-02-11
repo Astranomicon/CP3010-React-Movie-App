@@ -8,6 +8,8 @@ export const Home = () => {
 		data.movie2,
 		data.movie3,
 		data.movie4,
+		data.movie5,
+		data.movie6,
 	]);
 
 	return <Movies movies={movies} />;
