@@ -97,6 +97,35 @@ select {
 /* Movie CSS */
 
 .movie {
+  display: inline-table;
+  height: 100%;
+  width: 25%;
+  justify-content: left;
+  align-items: left;
+  margin: 16px;
+  padding: 8px;
+  background: #94dbff6b;
+  border: black 1px solid;
+}
+
+.moviePoster {
+  border: 1px solid black;
+}
+
+.movie h3 {
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movie p {
+  display: block;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0px;
+}
+
+.trashCan {
   display: inline-block;
   height: 100%;
   width: 25%;
@@ -108,15 +137,9 @@ select {
   border: black 1px solid;
 }
 
-.movie h3 {
-  display: inline-block;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.movie p {
-  display: inline-block;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0px;
+.trashCan:hover {
+  background-color: rgb(219, 98, 98);
+  color: #0aa1ed;
+  border: 1px solid #94dbff;
+  font-weight: bold;
 }
