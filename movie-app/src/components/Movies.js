@@ -1,6 +1,6 @@
 import Movie from "./Movie";
 
-export const Movies = ({ movies }) => {
+const Movies = ({ movies }) => {
 	return (
 		<>
 			{movies.map((movie) => (
@@ -9,3 +9,5 @@ export const Movies = ({ movies }) => {
 		</>
 	);
 };
+
+export default Movies;

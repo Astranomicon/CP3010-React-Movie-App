@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../components/Button";
 
-export const Reviews = () => {
+const Reviews = () => {
 	return (
 		<div>
 			<form>
@@ -42,3 +42,5 @@ export const Reviews = () => {
 		</div>
 	);
 };
+
+export default Reviews;
