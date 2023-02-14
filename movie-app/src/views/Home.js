@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Movies from "../components/Movies";
-import data from "../data/movie-data.json";
 
 const Home = () => {
 	const [movies, setMovies] = useState([
