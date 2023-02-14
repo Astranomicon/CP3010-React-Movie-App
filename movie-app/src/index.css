@@ -120,9 +120,18 @@ select {
 
 .movie p {
   display: block;
+  padding: 2px;
+  margin-top: 0px;
   align-items: center;
   justify-content: space-between;
+}
+
+.actors {
+  display: block;
+  padding: 8px;
   margin-top: 0px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .trashCan {

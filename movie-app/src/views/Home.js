@@ -2,19 +2,18 @@ import { useState, useEffect } from "react";
 import Movies from "../components/Movies";
 
 const Home = () => {
-	const [movies, setMovies] = useState();
-
-	console.log("Test?");
+	const [movies, setMovies] = useState(null);
 
 	useEffect(() => {
-		fetch("./movie-data.JSON")
+		fetch("./movie-data.json")
 			.then((response) => response.json())
 			.then(setMovies)
 			.catch((error) => console.log("This Error " + error));
 	}, []);
 
-	console.log(movies);
-	console.log("Test2?");
+	if (movies == null) {
+		return <h1>Loading...</h1>;
+	}
 
 	return <Movies movies={movies} />;
 };
