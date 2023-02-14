@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Movies from "../components/Movies";
 
 const Home = () => {
-	const [movies, setMovies] = useState([
-		data.movie1,
-		data.movie2,
-		data.movie3,
-		data.movie4,
-		data.movie5,
-		data.movie6,
-	]);
+	const [movies, setMovies] = useState();
+
+	useEffect(() => {
+		fetch("./movie-data.JSON")
+			.then((response) => response.json())
+			.then(setMovies)
+			.catch((error) => console.log("This Error " + error));
+	}, []);
+
+	console.log(movies);
 
 	return <Movies movies={movies} />;
 };
