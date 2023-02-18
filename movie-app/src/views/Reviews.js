@@ -1,8 +1,9 @@
 import React from "react";
 import Button from "../components/Button";
 
-const Reviews = ({ movies, setMovies }) => {
+//TODO: Make form add a new movie to the list of movies
 
+const Reviews = ({ movies, setMovies }) => {
 	return (
 		<div>
 			<form>
@@ -37,9 +38,7 @@ const Reviews = ({ movies, setMovies }) => {
 						<option value='4'>4 Stars</option>
 						<option value='5'>5 Stars</option>
 					</select>
-					<button className='btn' onClick={onSubmit}>
-						Add Movie Review
-					</button>
+					<button className='btn'>Add Movie Review</button>
 				</div>
 			</form>
 		</div>
