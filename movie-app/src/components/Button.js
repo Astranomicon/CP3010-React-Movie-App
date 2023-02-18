@@ -1,11 +1,9 @@
-export const Button = ({ text }) => {
-	const onClick = () => {
-		console.log("Button Clicked");
-	};
-
+const Button = ({ text, onClick }) => {
 	return (
 		<button onClick={onClick} className='btn'>
 			{text}
 		</button>
 	);
 };
+
+export default Button;

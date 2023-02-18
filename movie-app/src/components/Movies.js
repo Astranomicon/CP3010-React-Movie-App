@@ -1,5 +1,3 @@
-import Movie from "./Movie";
-
 const Movies = ({ movies, setMovies }) => {
 	const displayStars = (rating) => {
 		let stars = "";

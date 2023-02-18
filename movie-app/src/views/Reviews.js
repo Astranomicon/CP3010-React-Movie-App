@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "../components/Button";
+import Button from "../components/Button";
 
-const Reviews = () => {
+const Reviews = ({ movies, setMovies }) => {
+
 	return (
 		<div>
 			<form>
@@ -36,9 +37,11 @@ const Reviews = () => {
 						<option value='4'>4 Stars</option>
 						<option value='5'>5 Stars</option>
 					</select>
+					<button className='btn' onClick={onSubmit}>
+						Add Movie Review
+					</button>
 				</div>
 			</form>
-			<Button text='Add Movie Review' />
 		</div>
 	);
 };
