@@ -15,7 +15,7 @@ const Home = () => {
 		return <h1>Loading...</h1>;
 	}
 
-	return <Movies movies={movies} />;
+	return <Movies movies={movies} setMovies={setMovies} />;
 };
 
 export default Home;
