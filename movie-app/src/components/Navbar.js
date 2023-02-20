@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  
 	const navLinkStyles = ({ isActive }) => {
 		return {
 			fontWeight: isActive ? "bold" : "normal",
