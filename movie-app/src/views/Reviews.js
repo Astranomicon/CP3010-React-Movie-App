@@ -1,13 +1,7 @@
 import React from "react";
-import Button from "../components/Button";
-
-//TODO: Make form add a new movie to the list of movies
 
 const Reviews = ({ movies, setMovies }) => {
 	let newMovies = movies;
-
-	const defaultMoviePoster =
-		"http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg";
 
 	const [movieName, setMovieName] = React.useState("");
 	const [movieReleaseDate, setMovieReleaseDate] = React.useState("");
