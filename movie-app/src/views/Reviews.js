@@ -92,7 +92,8 @@ const Reviews = ({ movies, setMovies }) => {
 						onChange={actorsChange}
 					/>
 					<select name='moviePoster' onChange={posterChange}>
-						<option value='http://www.4motiondarlington.org/wp-content/uploads/2013/06/No-image-found.jpg'>
+						<option value=''></option>
+						<option value='http://cdn.shopify.com/s/files/1/0633/9736/3943/products/TSSW08.jpg?v=1660669214'>
 							Default Image
 						</option>
 						<option value='https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg'>
@@ -110,6 +111,7 @@ const Reviews = ({ movies, setMovies }) => {
 					</select>
 
 					<select name='movieRating' onChange={ratingChange}>
+						<option value=''></option>
 						<option value='1'>1 Star</option>
 						<option value='2'>2 Stars</option>
 						<option value='3'>3 Stars</option>
