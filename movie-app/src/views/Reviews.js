@@ -29,40 +29,40 @@ const Reviews = ({ movies, setMovies }) => {
 		setMovieRating(event.target.value);
 	};
 
-	const onSubmit = (event) => {
-		event.preventDefault();
-		console.log("Movie " + movieName + " added.");
-		addToList(
-			movieName,
-			movieReleaseDate,
-			movieActors,
-			moviePoster,
-			movieRating
-		);
-		console.log(newMovies);
-		setMovies(newMovies);
-	};
+	// const onSubmit = (event) => {
+	// 	event.preventDefault();
+	// 	console.log("Movie " + movieName + " added.");
+	// 	addToList(
+	// 		movieName,
+	// 		movieReleaseDate,
+	// 		movieActors,
+	// 		moviePoster,
+	// 		movieRating
+	// 	);
+	// 	console.log(newMovies);
+	// 	setMovies(newMovies);
+	// };
 
-	const addToList = (
-		movieName,
-		movieReleaseDate,
-		movieActors,
-		moviePoster,
-		movieRating
-	) => {
-		newMovies.push({
-			id: newMovies.length + 1,
-			name: movieName,
-			releaseDate: movieReleaseDate,
-			actors: movieActors,
-			poster: moviePoster,
-			rating: movieRating,
-		});
-	};
+	// const addToList = (
+	// 	movieName,
+	// 	movieReleaseDate,
+	// 	movieActors,
+	// 	moviePoster,
+	// 	movieRating
+	// ) => {
+	// 	newMovies.push({
+	// 		id: newMovies.length + 1,
+	// 		name: movieName,
+	// 		releaseDate: movieReleaseDate,
+	// 		actors: movieActors,
+	// 		poster: moviePoster,
+	// 		rating: movieRating,
+	// 	});
+	// };
 
 	return (
 		<div>
-			<form onSubmit={onSubmit}>
+			<form method='post' action='/updateMovies'>
 				<div className='form-container'>
 					<input
 						type='text'
@@ -112,7 +112,8 @@ const Reviews = ({ movies, setMovies }) => {
 						<option value='4'>4 Stars</option>
 						<option value='5'>5 Stars</option>
 					</select>
-					<button className='btn'>Add Movie Review</button>
+					{/* <button className='btn'>Add Movie Review</button> */}
+					<input type='submit' value='Submit' />
 				</div>
 			</form>
 		</div>
