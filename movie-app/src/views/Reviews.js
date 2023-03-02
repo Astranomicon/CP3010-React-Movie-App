@@ -29,36 +29,7 @@ const Reviews = ({ movies, setMovies }) => {
 		setMovieRating(event.target.value);
 	};
 
-	// const onSubmit = (event) => {
-	// 	event.preventDefault();
-	// 	console.log("Movie " + movieName + " added.");
-	// 	addToList(
-	// 		movieName,
-	// 		movieReleaseDate,
-	// 		movieActors,
-	// 		moviePoster,
-	// 		movieRating
-	// 	);
-	// 	console.log(newMovies);
-	// 	setMovies(newMovies);
-	// };
-
-	// const addToList = (
-	// 	movieName,
-	// 	movieReleaseDate,
-	// 	movieActors,
-	// 	moviePoster,
-	// 	movieRating
-	// ) => {
-	// 	newMovies.push({
-	// 		id: newMovies.length + 1,
-	// 		name: movieName,
-	// 		releaseDate: movieReleaseDate,
-	// 		actors: movieActors,
-	// 		poster: moviePoster,
-	// 		rating: movieRating,
-	// 	});
-	// };
+	
 
 	return (
 		<div>
