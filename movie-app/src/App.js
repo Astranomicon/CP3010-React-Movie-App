@@ -7,8 +7,9 @@ import Navbar from "./components/Navbar";
 function App() {
 	const [movies, setMovies] = useState(null);
 
+	// Fetch movies from database
 	useEffect(() => {
-		fetch("/movies")
+		fetch("/api/movies")
 			.then((response) => response.json())
 			.then(setMovies)
 			.catch((error) => console.log("This Error " + error));

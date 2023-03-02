@@ -7,10 +7,29 @@ const Movies = ({ movies, setMovies }) => {
 		return stars;
 	};
 
-	const onRemove = (id) => {
-		console.log("Movie ID " + id.toString() + " removed.");
-		let newMovies = movies.filter((movie) => movie.id !== id);
-		setMovies(newMovies);
+	const onRemove = async (title) => {
+		var myHeaders = new Headers();
+		myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+		var urlencoded = new URLSearchParams();
+		urlencoded.append("title", title);
+
+		var requestOptions = {
+			method: "POST",
+			headers: myHeaders,
+			body: urlencoded,
+			redirect: "follow",
+		};
+
+		try {
+			let response = await fetch("/api/removeMovie", requestOptions);
+			if (response.status == 200) {
+				console.log(`${title} successfully removed from database.`);
+				setMovies(movies.filter((movieElement) => movieElement.name !== title));
+			}
+		} catch (e) {
+			console.log("Error: " + e);
+		}
 	};
 
 	return (
@@ -22,7 +41,7 @@ const Movies = ({ movies, setMovies }) => {
 					<p>{movie.releaseDate}</p>
 					<p>{displayStars(movie.rating)}</p>
 					<p className='actors'>{movie.actors}</p>
-					<button className='trashCan' onClick={() => onRemove(movie.id)}>
+					<button className='trashCan' onClick={() => onRemove(movie.name)}>
 						🗑️
 					</button>
 				</div>

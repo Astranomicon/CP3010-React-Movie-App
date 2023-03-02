@@ -12,6 +12,7 @@
 /build
 
 /mongo-db-data
+/posters
 
 # misc
 .DS_Store

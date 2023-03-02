@@ -33,7 +33,7 @@ const Reviews = ({ movies, setMovies }) => {
 
 	return (
 		<div>
-			<form method='post' action='/updateMovies'>
+			<form method='post' action='/api/updateMovies'>
 				<div className='form-container'>
 					<input
 						type='text'

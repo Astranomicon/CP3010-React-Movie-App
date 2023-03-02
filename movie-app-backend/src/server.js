@@ -5,10 +5,14 @@ const app = express();
 app.use(express.json());
 const port = 8000;
 let movieData = [];
-
 app.use(express.urlencoded({ extended: false }));
+// app.use(express.static(path.join(__dirname, "../build")));
 
-app.get("/movies", async (req, res) => {
+// Add express path for poster images
+app.use(express.static(path.join(__dirname, "posters")));
+
+// Create an API endpoint for the frontend to fetch movies from the database
+app.get("/api/movies", async (req, res) => {
 	const client = new MongoClient("mongodb://127.0.0.1:27017");
 	await client.connect();
 
@@ -18,7 +22,21 @@ app.get("/movies", async (req, res) => {
 	res.json(movieData);
 });
 
-app.post("/updateMovies", async (req, res) => {
+// Create an API endpoint for the frontend to remove movies to the database
+app.post('/api/removeMovie', async (req, res) => {
+    console.log(req.body.title);
+    const client = new MongoClient("mongodb://127.0.0.1:27017");
+    await client.connect();
+
+    const db = client.db("movie-app-db");
+    const result = await db.collection("movies").deleteOne({ name: req.body.title });
+
+    res.sendStatus(200);
+
+})
+
+// Create an API endpoint for the frontend to add movies to the database
+app.post("/api/updateMovies", async (req, res) => {
 	const client = new MongoClient("mongodb://127.0.0.1:27017");
 	await client.connect();
 
@@ -39,6 +57,7 @@ app.post("/updateMovies", async (req, res) => {
 	res.redirect("/");
 });
 
+// Display a console message when the server is running
 app.listen(port, () => {
 	console.log(`Server is listening on port ${port}`);
 });
