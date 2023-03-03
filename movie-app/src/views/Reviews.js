@@ -1,93 +1,71 @@
 import React from "react";
+import { Card, Form, Button } from "react-bootstrap";
 
 const Reviews = ({ movies, setMovies }) => {
-	let newMovies = movies;
-
-	const [movieName, setMovieName] = React.useState("");
-	const [movieReleaseDate, setMovieReleaseDate] = React.useState("");
-	const [movieActors, setMovieActors] = React.useState("");
-	const [moviePoster, setMoviePoster] = React.useState("");
-	const [movieRating, setMovieRating] = React.useState("");
-
-	const movieChange = (event) => {
-		setMovieName(event.target.value);
-	};
-
-	const releaseDateChange = (event) => {
-		setMovieReleaseDate(event.target.value);
-	};
-
-	const actorsChange = (event) => {
-		setMovieActors(event.target.value);
-	};
-
-	const posterChange = (event) => {
-		setMoviePoster(event.target.value);
-	};
-
-	const ratingChange = (event) => {
-		setMovieRating(event.target.value);
-	};
-
-	
-
 	return (
-		<div>
-			<form method='post' action='/updateMovies'>
-				<div className='form-container'>
-					<input
-						type='text'
-						id='movieName'
-						name='movieName'
-						placeholder='Movie Name'
-						onChange={movieChange}
-					/>
-					<input
-						type='text'
-						id='movieReleaseDate'
-						name='movieReleaseDate'
-						placeholder='Release Date'
-						onChange={releaseDateChange}
-					/>
-					<input
-						type='text'
-						id='movieActors'
-						name='movieActors'
-						placeholder='Actors'
-						onChange={actorsChange}
-					/>
-					<select name='moviePoster' onChange={posterChange}>
-						<option value=''></option>
-						<option value='http://cdn.shopify.com/s/files/1/0633/9736/3943/products/TSSW08.jpg?v=1660669214'>
-							Default Image
-						</option>
-						<option value='https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg'>
-							Shawshank Redemption
-						</option>
-						<option value='https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg'>
-							Godfather
-						</option>
-						<option value='https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg'>
-							The Dark Knight
-						</option>
-						<option value='https://upload.wikimedia.org/wikipedia/en/0/00/Spider-Man_No_Way_Home_poster.jpg'>
-							Spiderman
-						</option>
-					</select>
+		<>
+			<center>
+				<br />
+				<Card style={{ width: "50rem", padding: "10px" }}>
+					<Form
+						method='post'
+						action='/api/updateMovies'
+						encType='multipart/form-data'
+					>
+						{/* Form Group for Movie Name */}
+						<Form.Group className='mb-2' controlId='movieName'>
+							<Form.Control
+								name='movieName'
+								type='text'
+								placeholder='Enter Movie Name'
+							/>
+						</Form.Group>
 
-					<select name='movieRating' onChange={ratingChange}>
-						<option value=''></option>
-						<option value='1'>1 Star</option>
-						<option value='2'>2 Stars</option>
-						<option value='3'>3 Stars</option>
-						<option value='4'>4 Stars</option>
-						<option value='5'>5 Stars</option>
-					</select>
-					{/* <button className='btn'>Add Movie Review</button> */}
-					<input type='submit' value='Submit' />
-				</div>
-			</form>
-		</div>
+						{/* Form Group for Movie Release Date */}
+						<Form.Group className='mb-2' controlId='movieReleaseDate'>
+							<Form.Control
+								name='movieReleaseDate'
+								type='text'
+								placeholder='Enter Release Date'
+							/>
+						</Form.Group>
+
+						{/* Form Group for Movie Actors */}
+						<Form.Group className='mb-2' controlId='movieActors'>
+							<Form.Control
+								name='movieActors'
+								type='text'
+								placeholder='Enter Actors List'
+							/>
+						</Form.Group>
+
+						{/* Form Group for Movie Rating */}
+						<Form.Group className='mb-2' controlId='movieRating'>
+							<Form.Select
+								name='movieRating'
+								aria-label='Default select example'
+							>
+								<option>Select a Movie Rating</option>
+								<option value='1'>1 Star</option>
+								<option value='2'>2 Stars</option>
+								<option value='3'>3 Stars</option>
+								<option value='4'>4 Stars</option>
+								<option value='5'>5 Stars</option>
+							</Form.Select>
+						</Form.Group>
+
+						{/* Form Group for Movie Poster */}
+						<Form.Group className='mb-3' controlId='moviePoster'>
+							<Form.Control name='moviePoster' type='file' />
+						</Form.Group>
+
+						<Button variant='primary' type='submit'>
+							Add Movie
+						</Button>
+					</Form>
+				</Card>
+			</center>
+		</>
 	);
 };
 

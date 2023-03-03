@@ -1,26 +1,21 @@
 import { NavLink } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
-const Navbar = () => {
-	const navLinkStyles = ({ isActive }) => {
-		return {
-			fontWeight: isActive ? "bold" : "normal",
-			textDecoration: isActive ? "none" : "underline",
-			border: isActive ? "1px solid black" : "none",
-			padding: isActive ? "4px" : "0px",
-			borderRadius: isActive ? "6px" : "0px",
-		};
-	};
-
+const NavbarComp = () => {
 	return (
-		<nav>
-			<NavLink style={navLinkStyles} to='/'>
-				Home
-			</NavLink>
-			<NavLink style={navLinkStyles} to='/reviews'>
-				Add Review
-			</NavLink>
-		</nav>
+		<>
+			<Navbar bg='dark' variant='dark'>
+				<Container>
+					<Navbar.Brand href='/'>CP3010 Large Assignment 2</Navbar.Brand>
+					<Nav className='me-auto'>
+						<Nav.Link href='/'>Home</Nav.Link>
+						<Nav.Link href='/reviews'>Add Review</Nav.Link>
+					</Nav>
+				</Container>
+			</Navbar>
+		</>
 	);
 };
 
-export default Navbar;
+export default NavbarComp;
