@@ -2,10 +2,6 @@ import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
-// <Nav bg='dark' variant='dark'>
-// 	<NavLink to='/'>Home</NavLink>
-// 	<NavLink to='/reviews'>Add Review</NavLink>
-// </Nav>
 const NavbarComp = () => {
 	return (
 		<>

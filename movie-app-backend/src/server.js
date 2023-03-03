@@ -15,7 +15,7 @@ let movieData = [];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 // Add express path for poster images
 app.use(express.static(path.join(__dirname, "../posters")));
@@ -41,7 +41,9 @@ app.post("/api/removeMovie", async (req, res) => {
 	await client.connect();
 
 	const db = client.db("movie-app-db");
-	const result = await db.collection("movies").deleteOne({ name: req.body.title });
+	const result = await db
+		.collection("movies")
+		.deleteOne({ name: req.body.title });
 
 	res.sendStatus(200);
 });

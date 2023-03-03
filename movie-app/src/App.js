@@ -4,8 +4,6 @@ import Home from "./views/Home";
 import Reviews from "./views/Reviews";
 import NavbarComp from "./components/Navbar";
 
-import { Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
-
 function App() {
 	const [movies, setMovies] = useState(null);
 
@@ -31,7 +29,10 @@ function App() {
 					element={<Home movies={movies} setMovies={setMovies} />}
 				/>
 				{/* Route user to Review Page */}
-				<Route path='/reviews' element={<Reviews movies={movies} setMovies={setMovies} />} />
+				<Route
+					path='/reviews'
+					element={<Reviews movies={movies} setMovies={setMovies} />}
+				/>
 			</Routes>
 		</>
 	);
