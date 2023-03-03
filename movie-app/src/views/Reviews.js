@@ -29,11 +29,13 @@ const Reviews = ({ movies, setMovies }) => {
 		setMovieRating(event.target.value);
 	};
 
-	
-
 	return (
 		<div>
-			<form method='post' action='/api/updateMovies'>
+			<form
+				method='post'
+				action='/api/updateMovies'
+				encType='multipart/form-data'
+			>
 				<div className='form-container'>
 					<input
 						type='text'
@@ -56,25 +58,6 @@ const Reviews = ({ movies, setMovies }) => {
 						placeholder='Actors'
 						onChange={actorsChange}
 					/>
-					<select name='moviePoster' onChange={posterChange}>
-						<option value=''></option>
-						<option value='http://cdn.shopify.com/s/files/1/0633/9736/3943/products/TSSW08.jpg?v=1660669214'>
-							Default Image
-						</option>
-						<option value='https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg'>
-							Shawshank Redemption
-						</option>
-						<option value='https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg'>
-							Godfather
-						</option>
-						<option value='https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg'>
-							The Dark Knight
-						</option>
-						<option value='https://upload.wikimedia.org/wikipedia/en/0/00/Spider-Man_No_Way_Home_poster.jpg'>
-							Spiderman
-						</option>
-					</select>
-
 					<select name='movieRating' onChange={ratingChange}>
 						<option value=''></option>
 						<option value='1'>1 Star</option>
@@ -83,6 +66,7 @@ const Reviews = ({ movies, setMovies }) => {
 						<option value='4'>4 Stars</option>
 						<option value='5'>5 Stars</option>
 					</select>
+					<input type='file' name='moviePoster' />
 					{/* <button className='btn'>Add Movie Review</button> */}
 					<input type='submit' value='Submit' />
 				</div>

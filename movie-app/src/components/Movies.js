@@ -37,7 +37,7 @@ const Movies = ({ movies, setMovies }) => {
 			{movies.map((movie) => (
 				<div className='movie'>
 					<h3>{movie.name}</h3>
-					<img className='moviePoster' src={movie.poster} alt={movie.name} />
+					<img className='moviePoster' src={movie.poster} alt={movie.poster} />
 					<p>{movie.releaseDate}</p>
 					<p>{displayStars(movie.rating)}</p>
 					<p className='actors'>{movie.actors}</p>
