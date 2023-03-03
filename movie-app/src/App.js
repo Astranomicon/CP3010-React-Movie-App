@@ -30,8 +30,7 @@ function App() {
 				/>
 				{/* Route user to Review Page */}
 				<Route
-					path='/reviews'
-					element={<Reviews movies={movies} setMovies={setMovies} />}
+					path='/reviews' element={<Reviews movies={movies} setMovies={setMovies} />}
 				/>
 			</Routes>
 		</>
