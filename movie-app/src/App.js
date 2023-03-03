@@ -2,7 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Home from "./views/Home";
 import Reviews from "./views/Reviews";
-import Navbar from "./components/Navbar";
+import NavbarComp from "./components/Navbar";
+
+import { Nav, Navbar, NavDropdown, NavLink } from "react-bootstrap";
 
 function App() {
 	const [movies, setMovies] = useState(null);
@@ -21,7 +23,7 @@ function App() {
 
 	return (
 		<>
-			<Navbar />
+			<NavbarComp />
 			<Routes>
 				{/* Route user to Home Page */}
 				<Route

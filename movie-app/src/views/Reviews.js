@@ -1,34 +1,6 @@
 import React from "react";
 
 const Reviews = ({ movies, setMovies }) => {
-	let newMovies = movies;
-
-	const [movieName, setMovieName] = React.useState("");
-	const [movieReleaseDate, setMovieReleaseDate] = React.useState("");
-	const [movieActors, setMovieActors] = React.useState("");
-	const [moviePoster, setMoviePoster] = React.useState("");
-	const [movieRating, setMovieRating] = React.useState("");
-
-	const movieChange = (event) => {
-		setMovieName(event.target.value);
-	};
-
-	const releaseDateChange = (event) => {
-		setMovieReleaseDate(event.target.value);
-	};
-
-	const actorsChange = (event) => {
-		setMovieActors(event.target.value);
-	};
-
-	const posterChange = (event) => {
-		setMoviePoster(event.target.value);
-	};
-
-	const ratingChange = (event) => {
-		setMovieRating(event.target.value);
-	};
-
 	return (
 		<div>
 			<form
@@ -42,23 +14,23 @@ const Reviews = ({ movies, setMovies }) => {
 						id='movieName'
 						name='movieName'
 						placeholder='Movie Name'
-						onChange={movieChange}
+						// onChange={movieChange}
 					/>
 					<input
 						type='text'
 						id='movieReleaseDate'
 						name='movieReleaseDate'
 						placeholder='Release Date'
-						onChange={releaseDateChange}
+						// onChange={releaseDateChange}
 					/>
 					<input
 						type='text'
 						id='movieActors'
 						name='movieActors'
 						placeholder='Actors'
-						onChange={actorsChange}
+						// onChange={actorsChange}
 					/>
-					<select name='movieRating' onChange={ratingChange}>
+					<select name='movieRating'>
 						<option value=''></option>
 						<option value='1'>1 Star</option>
 						<option value='2'>2 Stars</option>
